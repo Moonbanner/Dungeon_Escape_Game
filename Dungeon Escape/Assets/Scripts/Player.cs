@@ -5,12 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D _rigid;
-    [SerializeField] 
-    private float _jumpForce = 8.0f;
+    [SerializeField]
+    private float _jumpForce = 1.0f;
     private bool _resetJump = false;
     [SerializeField]
     private float _speed = 8.0f;
-
+    private bool _grounded = false;
     private PlayerAnimation _playerAnim;
     private SpriteRenderer _playerSprite;
 
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     void Movement()
     {
         float move = Input.GetAxisRaw("Horizontal");
+        _grounded = IsGrounded();
 
         if (move > 0)
         {
@@ -44,33 +45,36 @@ public class Player : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && IsGrounded() == true)
         {
-            Debug.Log("Jump!");
             _rigid.velocity = new Vector2(_rigid.velocity.x, _jumpForce);
             StartCoroutine(ResetJumpRoutine());
+            _playerAnim.Jump(true);
         }
 
         _rigid.velocity = new Vector2(move * _speed, _rigid.velocity.y);
+
         _playerAnim.Move(move);
     }
 
+    bool IsGrounded()
+    {
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 1f, 1 << 8);
+
+        if (hitInfo.collider != null)
+        {
+            if (_resetJump == false)
+            {
+                _playerAnim.Jump(false);
+                return true;
+            }
+        }
+        return false;
+    }
     void Flip(bool faceLeft)
     {
         if (faceLeft == false)
             _playerSprite.flipX = false;
         else
             _playerSprite.flipX = true;
-    }
-
-    bool IsGrounded()
-    {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 0.7f, 1 << 8);
-
-        if (hitInfo.collider != null)
-        {
-            if (_resetJump == false)
-                return true;
-        }
-        return false;
     }
 
     IEnumerator ResetJumpRoutine()
