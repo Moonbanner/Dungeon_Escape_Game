@@ -6,12 +6,14 @@ public class PlayerAnimation : MonoBehaviour
 {
     //handle to animator
     private Animator _anim;
+    private Animator _swordAnimation;
 
     // Start is called before the first frame update
     void Start()
     {
         //assign handle to animator
         _anim = GetComponentInChildren < Animator>();
+        _swordAnimation = transform.GetChild(1).GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,5 +25,11 @@ public class PlayerAnimation : MonoBehaviour
     public void Jump(bool jumping)
     {
         _anim.SetBool("midAir", jumping);
+    }
+
+    public void Swing()
+    {
+        _anim.SetTrigger("Attack");
+        _swordAnimation.SetTrigger("SwordAnimation");
     }
 }
