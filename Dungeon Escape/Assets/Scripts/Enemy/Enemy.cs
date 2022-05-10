@@ -15,7 +15,11 @@ public abstract class Enemy : MonoBehaviour
 
     protected Vector3 currentTarget;
     protected Animator anim;
-    protected SpriteRenderer mossSprite;
+    protected SpriteRenderer sprite;
+
+    protected bool isHit = false;
+
+    protected Player player;
 
     private void Start()
     {
@@ -25,12 +29,13 @@ public abstract class Enemy : MonoBehaviour
     public virtual void Init()
     {
         anim = GetComponentInChildren<Animator>();
-        mossSprite = GetComponentInChildren<SpriteRenderer>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     public virtual void Update()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && anim.GetBool("InCombat") == false)
         {
             return;
         }
@@ -41,11 +46,11 @@ public abstract class Enemy : MonoBehaviour
     {
         if (currentTarget == pointA.position)
         {
-            mossSprite.flipX = true;
+            sprite.flipX = true;
         }
         else if (currentTarget == pointB.position)
         {
-            mossSprite.flipX = false;
+            sprite.flipX = false;
         }
 
         if (transform.position == pointA.position)
@@ -58,7 +63,17 @@ public abstract class Enemy : MonoBehaviour
             currentTarget = pointA.position;
             anim.SetTrigger("Idle");
         }
+        if(isHit == false)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
+        }
 
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if(distance > 4.0f)
+        {
+            isHit = false;
+            anim.SetBool("InCombat", false);
+        }
+        
     }
 }
