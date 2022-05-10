@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spider : Enemy
+public class Skeleton : Enemy
 {
-    // use for initialization
+    //use for initialization
     public override void Init()
     {
         base.Init();
     }
-
 }
