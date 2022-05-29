@@ -16,7 +16,7 @@ public class Skeleton : Enemy, IDamageable
     {
         base.Movement();
         float distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
-        Debug.Log("Distance:" + distance);
+        //Debug.Log("Distance:" + distance);
 
         Vector3 direction = player.transform.localPosition - transform.localPosition;
 
@@ -37,7 +37,7 @@ public class Skeleton : Enemy, IDamageable
 
     public void Damage()
     {
-        Debug.Log("Hit!");
+        //Debug.Log("Hit!");
         Health--;
         anim.SetTrigger("Hit");
         isHit = true;
