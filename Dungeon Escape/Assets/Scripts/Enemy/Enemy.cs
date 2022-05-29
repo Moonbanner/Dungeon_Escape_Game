@@ -36,11 +36,15 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void Update()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && anim.GetBool("InCombat") == false || isDeath == true)
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && anim.GetBool("InCombat") == false)
         {
             return;
         }
-        Movement();
+        if (isDeath == false)
+        {
+            Movement();
+        }
+        
     }
 
     public virtual void Movement()
