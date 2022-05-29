@@ -19,7 +19,7 @@ public class Skeleton : Enemy, IDamageable
 
     public void Damage()
     {
-        Debug.Log("Skeleton::Damage()");
+        //Debug.Log("Skeleton::Damage()");
         Health--;
         anim.SetTrigger("Hit");
         isHit = true;
@@ -27,7 +27,8 @@ public class Skeleton : Enemy, IDamageable
 
         if (Health < 1)
         {
-            Destroy(this.gameObject);
+            isDeath = true;
+            anim.SetTrigger("Death");
         }
 
     }

@@ -18,6 +18,7 @@ public abstract class Enemy : MonoBehaviour
     protected SpriteRenderer sprite;
 
     protected bool isHit = false;
+    protected bool isDeath = false;
 
     protected Player player;
 
@@ -35,7 +36,7 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void Update()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && anim.GetBool("InCombat") == false)
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && anim.GetBool("InCombat") == false || isDeath == true)
         {
             return;
         }
