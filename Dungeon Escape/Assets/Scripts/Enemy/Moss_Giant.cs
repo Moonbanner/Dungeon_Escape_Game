@@ -18,6 +18,7 @@ public class Moss_Giant : Enemy, IDamageable
     }
     public void Damage()
     {
+        if (Health < 1) return;
         //Debug.Log("MossGiant::Damage()");
         Health--;
         anim.SetTrigger("Hit");
