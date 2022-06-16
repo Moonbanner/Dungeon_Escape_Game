@@ -6,7 +6,7 @@ public class Player : MonoBehaviour, IDamageable
 {
     public Rigidbody2D _rigid;
     [SerializeField]
-    private float _jumpForce = 5.0f;
+    private float jumpForce = 5.0f;
     private bool _resetJump = false;
     [SerializeField]
     private float _speed = 8.0f;
@@ -34,13 +34,16 @@ public class Player : MonoBehaviour, IDamageable
         if(isDeath == false)
         {
             Movement();
+
+            //left click to swing sword
+            if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
+            {
+                _playerAnim.Swing();
+            }
+
         }
+
         
-        //left click to swing sword
-        if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
-        {
-            _playerAnim.Swing();
-        }
 
     }
 
@@ -60,7 +63,7 @@ public class Player : MonoBehaviour, IDamageable
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && IsGrounded() == true)
         {
-            _rigid.velocity = new Vector2(_rigid.velocity.x, _jumpForce);
+            _rigid.velocity = new Vector2(_rigid.velocity.x, jumpForce);
             StartCoroutine(ResetJumpRoutine());
             _playerAnim.Jump(true);
         }
