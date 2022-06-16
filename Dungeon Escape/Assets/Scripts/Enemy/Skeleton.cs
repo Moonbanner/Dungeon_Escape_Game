@@ -34,4 +34,8 @@ public class Skeleton : Enemy, IDamageable
 
     }
 
+    public void Spike()
+    {
+        throw new System.NotImplementedException();
+    }
 }

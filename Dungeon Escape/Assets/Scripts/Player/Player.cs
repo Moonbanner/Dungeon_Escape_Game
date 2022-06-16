@@ -14,6 +14,7 @@ public class Player : MonoBehaviour, IDamageable
     private PlayerAnimation _playerAnim;
     private SpriteRenderer _playerSprite;
     private SpriteRenderer _swordArcSprite;
+    private bool isDeath = false;
 
     public int Health { get; set; }
     // Start is called before the first frame update
@@ -30,7 +31,11 @@ public class Player : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if(isDeath == false)
+        {
+            Movement();
+        }
+        
         //left click to swing sword
         if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
         {
@@ -118,8 +123,15 @@ public class Player : MonoBehaviour, IDamageable
         Health--;
         if(Health<1)
         {
+            isDeath = true;
             _playerAnim.Death();
         }
 
+    }
+
+    public void Spike()
+    {
+        isDeath = true;
+        _playerAnim.Death();
     }
 }

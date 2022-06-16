@@ -31,4 +31,9 @@ public class Moss_Giant : Enemy, IDamageable
             anim.SetTrigger("Death");
         }
     }
+
+    public void Spike()
+    {
+        throw new System.NotImplementedException();
+    }
 }

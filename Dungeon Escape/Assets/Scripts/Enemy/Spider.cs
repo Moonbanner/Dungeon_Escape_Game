@@ -37,4 +37,8 @@ public class Spider : Enemy, IDamageable
         Instantiate(acidEffectPrefab, transform.position, Quaternion.identity);
     }
 
+    public void Spike()
+    {
+        throw new System.NotImplementedException();
+    }
 }
