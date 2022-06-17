@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -40,10 +41,12 @@ public class Player : MonoBehaviour, IDamageable
             {
                 _playerAnim.Swing();
             }
-
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
+        }
 
     }
 
@@ -119,6 +122,14 @@ public class Player : MonoBehaviour, IDamageable
         _resetJump = false;
     }
 
+    IEnumerator SetDeathState()
+    {
+        _playerAnim.Death();
+        isDeath = true;
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("Menu");
+    }
+
     public void Damage()
     {
         if (Health < 1) return;
@@ -126,15 +137,13 @@ public class Player : MonoBehaviour, IDamageable
         Health--;
         if(Health<1)
         {
-            isDeath = true;
-            _playerAnim.Death();
+            StartCoroutine(SetDeathState());
         }
 
     }
 
     public void Spike()
     {
-        isDeath = true;
-        _playerAnim.Death();
+        StartCoroutine(SetDeathState());        
     }
 }
