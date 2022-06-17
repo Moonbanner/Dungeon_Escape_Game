@@ -35,7 +35,9 @@ public class Player : MonoBehaviour, IDamageable
     {
         if(isHit == true || isDeath == true)
         {
-            _rigid.velocity = Vector2.zero;  
+            _rigid.velocity = Vector2.zero;
+            Vector2 a = new Vector2(0, -50);
+            _rigid.AddForce(a);
         }
         if(isDeath == false)
         {
