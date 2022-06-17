@@ -12,15 +12,9 @@ public class Spikes : MonoBehaviour
         IDamageable hit = other.GetComponent<IDamageable>();
 
         if (hit != null)
-        {
-            
-            
+        {                     
                 hit.Spike();
-               
-            
+                           
         }
     }
-
-    
-
 }
