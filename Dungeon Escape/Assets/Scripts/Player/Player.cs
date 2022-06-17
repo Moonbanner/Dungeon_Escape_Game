@@ -16,6 +16,7 @@ public class Player : MonoBehaviour, IDamageable
     private SpriteRenderer _playerSprite;
     private SpriteRenderer _swordArcSprite;
     private bool isDeath = false;
+    private bool isHit = false;
 
     public int Health { get; set; }
     // Start is called before the first frame update
@@ -32,15 +33,22 @@ public class Player : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
+        if(isHit == true || isDeath == true)
+        {
+            _rigid.velocity = Vector2.zero;  
+        }
         if(isDeath == false)
         {
-            Movement();
-
-            //left click to swing sword
-            if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
+            if(isHit == false)
             {
-                _playerAnim.Swing();
-            }
+                Movement();
+
+                //left click to swing sword
+                if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
+                {
+                    _playerAnim.Swing();
+                }
+            }      
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -129,21 +137,36 @@ public class Player : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Menu");
     }
+    IEnumerator SetHitState()
+    {
+        _playerAnim.Hit();
+        isHit = true;
+        yield return new WaitForSeconds(1.5f);
+        isHit = false;
+    }
 
     public void Damage()
     {
         if (Health < 1) return;
         Debug.Log("Player::Damage()");
+        
         Health--;
         if(Health<1)
         {
             StartCoroutine(SetDeathState());
         }
-
+        if(isDeath == false)
+        {
+            StartCoroutine(SetHitState());
+        }
+        
     }
 
     public void Spike()
     {
-        StartCoroutine(SetDeathState());        
+        if(isDeath == false)
+        {
+            StartCoroutine(SetDeathState());
+        }        
     }
 }

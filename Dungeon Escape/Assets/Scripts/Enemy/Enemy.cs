@@ -40,6 +40,8 @@ public abstract class Enemy : MonoBehaviour
         {
             return;
         }
+        
+
         if (isDeath == false)
         {
             Movement();
@@ -74,7 +76,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if(distance > 4.0f)
+        if(distance > 6.0f)
         {
             isHit = false;
             anim.SetBool("InCombat", false);

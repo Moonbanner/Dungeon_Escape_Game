@@ -26,6 +26,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         _anim.SetBool("midAir", jumping);
     }
+    
 
     public void Swing()
     {
@@ -36,5 +37,10 @@ public class PlayerAnimation : MonoBehaviour
     public void Death()
     {
         _anim.SetTrigger("Death");
+    }
+
+    public void Hit()
+    {
+        _anim.SetTrigger("Hit");
     }
 }
