@@ -153,6 +153,8 @@ public class Player : MonoBehaviour, IDamageable
         Debug.Log("Player::Damage()");
         
         Health--;
+        UIManager.Instance.UpdateLife(Health);
+
         if(Health<1)
         {
             StartCoroutine(SetDeathState());
