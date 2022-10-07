@@ -25,7 +25,7 @@ public class Skeleton : Enemy, IDamageable
         anim.SetTrigger("Hit");
         isHit = true;
         anim.SetBool("InCombat", true);
-
+        HealthBarUpdate(Health);
         if (Health < 1)
         {
             isDeath = true;

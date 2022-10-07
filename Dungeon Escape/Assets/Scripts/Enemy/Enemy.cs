@@ -16,6 +16,7 @@ public abstract class Enemy : MonoBehaviour
     protected Vector3 currentTarget;
     protected Animator anim;
     protected SpriteRenderer sprite;
+    public SpriteRenderer[] healthBars;
 
     protected bool isHit = false;
     protected bool isDeath = false;
@@ -49,6 +50,16 @@ public abstract class Enemy : MonoBehaviour
         
     }
 
+    public void HealthBarUpdate(int health)
+    {
+        for (int i = 0; i <= health; i++)
+        {
+            if (i == health)
+            {
+                healthBars[i].enabled = false;
+            }
+        }
+    }
     public virtual void Movement()
     {
         if (currentTarget == pointA.position)

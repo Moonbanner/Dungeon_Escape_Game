@@ -171,6 +171,7 @@ public class Player : MonoBehaviour, IDamageable
         if(isDeath == false)
         {
             StartCoroutine(SetDeathState());
+            UIManager.Instance.UpdateLife_Spike(Health);
         }        
     }
 }

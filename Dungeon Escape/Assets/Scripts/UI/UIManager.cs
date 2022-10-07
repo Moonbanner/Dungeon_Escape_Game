@@ -35,4 +35,11 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    public void UpdateLife_Spike(int livesRemaining)
+    {
+        for (int i = 0; i <= livesRemaining; i++)
+        {           
+                healthBars[i].enabled = false;
+        }
+    }
 }

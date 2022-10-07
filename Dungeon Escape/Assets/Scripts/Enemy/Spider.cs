@@ -21,6 +21,7 @@ public class Spider : Enemy, IDamageable
     {
         if (Health < 1) return;
         Health--;
+        HealthBarUpdate(Health);
         if (Health < 1) 
         {
             isDeath = true;

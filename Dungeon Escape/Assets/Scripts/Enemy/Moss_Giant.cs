@@ -5,7 +5,8 @@ using UnityEngine;
 public class Moss_Giant : Enemy, IDamageable
 {
     public int Health { get; set; }
-  
+   
+
     // use for initialization
     public override void Init()
     {
@@ -24,6 +25,8 @@ public class Moss_Giant : Enemy, IDamageable
         anim.SetTrigger("Hit");
         isHit = true;
         anim.SetBool("InCombat", true);
+
+        HealthBarUpdate(Health);
 
         if (Health < 1)
         {
