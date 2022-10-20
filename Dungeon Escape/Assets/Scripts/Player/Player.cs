@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IDamageable
 {
+    public int diamonds;
+
     public Rigidbody2D _rigid;
     [SerializeField]
     private float jumpForce = 5.0f;
@@ -173,5 +175,11 @@ public class Player : MonoBehaviour, IDamageable
             StartCoroutine(SetDeathState());
             UIManager.Instance.UpdateLife_Spike(Health);
         }        
+    }
+
+    public void AddGems(int amount)
+    {
+        diamonds += amount;
+        UIManager.Instance.UpdateGemCount(diamonds);
     }
 }
