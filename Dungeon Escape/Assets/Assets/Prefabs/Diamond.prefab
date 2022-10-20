@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54f12bc776d89244941d914f086565f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gems: 1
 --- !u!58 &-158617349058373102
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -130,9 +129,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014636517, y: 0.008363575}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.39963648
+  m_Radius: 0.615
 --- !u!50 &-2365375693383783270
 Rigidbody2D:
   serializedVersion: 4

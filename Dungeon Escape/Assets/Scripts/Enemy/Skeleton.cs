@@ -31,8 +31,6 @@ public class Skeleton : Enemy, IDamageable
             isDeath = true;
             anim.SetTrigger("Death");
             GetComponent<BoxCollider2D>().enabled = false;
-            GameObject diamond = Instantiate(diamondPrefab, transform.position, Quaternion.identity) as GameObject;
-            diamond.GetComponent<Diamond>().gems = base.gems;
         }
 
     }

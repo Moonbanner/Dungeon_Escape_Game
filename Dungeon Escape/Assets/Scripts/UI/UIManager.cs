@@ -18,9 +18,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public Text playerGemCountText;
     public Image[] healthBars;
-    
 
     private void Awake()
     {
