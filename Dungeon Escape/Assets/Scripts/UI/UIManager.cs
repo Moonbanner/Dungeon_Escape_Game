@@ -18,12 +18,18 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public Text playerGemCountText;
     public Image[] healthBars;
     public Text gemCountText;
 
     private void Awake()
     {
         _instance = this;
+    }
+
+    public void OpenShop(int gemsCount)
+    {
+        playerGemCountText.text = "" + gemsCount + "G";
     }
 
     public void UpdateLife(int livesRemaining)
