@@ -27,4 +27,26 @@ public class Shop : MonoBehaviour
             shopPanel.SetActive(false);
         }
     }
+
+    public void SelectItem(int item)
+    {
+        // select item
+        // max health = 0
+        // sword arc = 1 
+        // gate key = 2
+        Debug.Log("select item " + item);
+
+        switch(item)
+        {
+            case 0:
+                UIManager.Instance.UpdateShopSelection(132);
+                break;
+            case 1:
+                UIManager.Instance.UpdateShopSelection(28);
+                break;
+            case 2:
+                UIManager.Instance.UpdateShopSelection(-76);
+                break;
+        }
+    }
 }
