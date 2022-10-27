@@ -30,10 +30,12 @@ public class PlayerAnimation : MonoBehaviour
 
     public void Swing()
     {
-        _anim.SetTrigger("Attack");
+        _anim.SetTrigger("Attack");   
+    }
+    public void SwordArc()
+    {
         _swordAnimation.SetTrigger("SwordAnimation");
     }
-
     public void Death()
     {
         _anim.SetTrigger("Death");

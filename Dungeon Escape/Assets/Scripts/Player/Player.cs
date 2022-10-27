@@ -19,6 +19,7 @@ public class Player : MonoBehaviour, IDamageable
     private SpriteRenderer _swordArcSprite;
     private bool isDeath = false;
     private bool isHit = false;
+    private bool haveSwordArc = false;
 
     public int Health { get; set; }
     // Start is called before the first frame update
@@ -51,6 +52,10 @@ public class Player : MonoBehaviour, IDamageable
                 if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
                 {
                     _playerAnim.Swing();
+                    if (haveSwordArc)
+                    {
+                        _playerAnim.SwordArc();
+                    }
                 }
             }      
         }
