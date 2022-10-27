@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d21c6cf98b10045b46018b05fc23db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondPrefab: {fileID: 2017175364264079107, guid: 635c299294f11544fab76cdb5c73c67a,
+  diamondPrefab: {fileID: 7287427264791809763, guid: 635c299294f11544fab76cdb5c73c67a,
     type: 3}
   health: 2
   speed: 1
@@ -1563,7 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d21c6cf98b10045b46018b05fc23db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondPrefab: {fileID: 2017175364264079107, guid: 635c299294f11544fab76cdb5c73c67a,
+  diamondPrefab: {fileID: 7287427264791809763, guid: 635c299294f11544fab76cdb5c73c67a,
     type: 3}
   health: 2
   speed: 1
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f7af082c4269b46b31bb05153a12e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondPrefab: {fileID: 2017175364264079107, guid: 635c299294f11544fab76cdb5c73c67a,
+  diamondPrefab: {fileID: 7287427264791809763, guid: 635c299294f11544fab76cdb5c73c67a,
     type: 3}
   health: 3
   speed: 0.5
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4308168648489e4c8e2d575bc4eb8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondPrefab: {fileID: 2017175364264079107, guid: 635c299294f11544fab76cdb5c73c67a,
+  diamondPrefab: {fileID: 7287427264791809763, guid: 635c299294f11544fab76cdb5c73c67a,
     type: 3}
   health: 5
   speed: 1
@@ -4550,7 +4550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f7af082c4269b46b31bb05153a12e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondPrefab: {fileID: 2017175364264079107, guid: 635c299294f11544fab76cdb5c73c67a,
+  diamondPrefab: {fileID: 7287427264791809763, guid: 635c299294f11544fab76cdb5c73c67a,
     type: 3}
   health: 3
   speed: 0.5
@@ -38674,7 +38674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4308168648489e4c8e2d575bc4eb8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondPrefab: {fileID: 2017175364264079107, guid: 635c299294f11544fab76cdb5c73c67a,
+  diamondPrefab: {fileID: 7287427264791809763, guid: 635c299294f11544fab76cdb5c73c67a,
     type: 3}
   health: 5
   speed: 1
