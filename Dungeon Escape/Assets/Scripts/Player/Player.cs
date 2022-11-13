@@ -19,9 +19,11 @@ public class Player : MonoBehaviour, IDamageable
     private SpriteRenderer _swordArcSprite;
     private bool isDeath = false;
     private bool isHit = false;
-    private bool haveSwordArc = false;
+    public bool haveSwordArc = false;
 
     public int Health { get; set; }
+    public int MaxHealth { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour, IDamageable
         _playerAnim = GetComponent<PlayerAnimation>();
         _playerSprite = GetComponentInChildren<SpriteRenderer>();
         _swordArcSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
+        MaxHealth = 2;
         Health = 2;
     }
 
@@ -157,7 +160,7 @@ public class Player : MonoBehaviour, IDamageable
     public void Damage()
     {
         if (Health < 1) return;
-        Debug.Log("Player::Damage()");
+        //Debug.Log("Player::Damage()");
         
         Health--;
         UIManager.Instance.UpdateLife(Health);

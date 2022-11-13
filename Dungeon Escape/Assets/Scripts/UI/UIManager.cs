@@ -48,6 +48,14 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    public void UpdateMaxHealth(int maxHealth)
+    {
+        for (int i = 0; i < maxHealth; i++)
+        {      
+               healthBars[i].enabled = true;
+        }
+    }
+
     public void UpdateLife_Spike(int livesRemaining)
     {
         for (int i = 0; i <= livesRemaining; i++)
