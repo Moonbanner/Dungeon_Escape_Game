@@ -3473,7 +3473,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 583100812}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1110478480}
+        m_MethodName: YesButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &583100812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7163,6 +7174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e227647adb64d44b90da52738536de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasKeyNotification: {fileID: 464705254}
+  NoKeyNotification: {fileID: 1234201}
 --- !u!1 &1125600438
 GameObject:
   m_ObjectHideFlags: 0
@@ -44033,7 +44046,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1535668429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1110478480}
+        m_MethodName: NoButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1535668429
 MonoBehaviour:
   m_ObjectHideFlags: 0
