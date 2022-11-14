@@ -716,8 +716,8 @@ RectTransform:
   m_Children:
   - {fileID: 987862912}
   - {fileID: 100316291}
-  - {fileID: 932734842}
   - {fileID: 1789405106}
+  - {fileID: 932734842}
   - {fileID: 1470308833}
   m_Father: {fileID: 0}
   m_RootOrder: 26
@@ -6157,7 +6157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You don't have enough money!
+  m_Text: You don't have enough gems!
 --- !u!222 &802847173
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6821,7 +6821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &932734842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6835,11 +6835,11 @@ RectTransform:
   m_Children:
   - {fileID: 427193360}
   m_Father: {fileID: 80506410}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.900011, y: 221.59995}
+  m_AnchoredPosition: {x: 12.900009, y: 221.59999}
   m_SizeDelta: {x: 351.65768, y: 152.30492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932734843
@@ -44608,6 +44608,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPanel: {fileID: 100316290}
+  buyKeyNotification: {fileID: 932734841}
+  noGemsNotification: {fileID: 1789405105}
   currentSelectedItem: 0
   currentItemCost: 0
 --- !u!1 &1548224781
@@ -45988,12 +45990,12 @@ GameObject:
   - component: {fileID: 1789405108}
   - component: {fileID: 1789405107}
   m_Layer: 5
-  m_Name: 'NoMoney_Notification '
+  m_Name: 'NoGems_Notification '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1789405106
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46007,11 +46009,11 @@ RectTransform:
   m_Children:
   - {fileID: 802847171}
   m_Father: {fileID: 80506410}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.900011, y: 221.59995}
+  m_AnchoredPosition: {x: 12.900009, y: 221.59999}
   m_SizeDelta: {x: 351.65768, y: 152.30492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789405107
