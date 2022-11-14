@@ -1045,7 +1045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &100316291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1318,7 +1318,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10G
+  m_Text: 5G
 --- !u!222 &122998787
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1819,7 +1819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff448aa64a2c0e848808a5d8f80db7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamonds: 0
+  diamonds: 100
   _rigid: {fileID: 0}
   jumpForce: 7
   _speed: 5
@@ -6433,7 +6433,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20G
+  m_Text: 10G
 --- !u!222 &865605975
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -46373,7 +46373,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30G
+  m_Text: 15G
 --- !u!222 &1862668448
 CanvasRenderer:
   m_ObjectHideFlags: 0

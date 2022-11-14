@@ -35,7 +35,10 @@ public class Player : MonoBehaviour, IDamageable
         MaxHealth = 2;
         Health = 2;
     }
-
+    //void Awake()
+    //{
+    //    DontDestroyOnLoad(transform.gameObject);
+    //}
     // Update is called once per frame
     void Update()
     {
