@@ -42,6 +42,6 @@ public class Gates : MonoBehaviour
     IEnumerator SetGateState()
     {      
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("GameScene2");
     }
 }

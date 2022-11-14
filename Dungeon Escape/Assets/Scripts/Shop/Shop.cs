@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public GameObject shopPanel;
+    public GameObject buyKeyNotification;
+    public GameObject noGemsNotification;
     public int currentSelectedItem = 2;
     public int currentItemCost = 5;
     private Player _player;
@@ -29,6 +31,8 @@ public class Shop : MonoBehaviour
         if (other.tag == "Player")
         {
             shopPanel.SetActive(false);
+            noGemsNotification.SetActive(false);
+            buyKeyNotification.SetActive(false);
         }
     }
 
@@ -64,8 +68,13 @@ public class Shop : MonoBehaviour
     {
         if(_player.diamonds >= currentItemCost)
         {
-            if(currentSelectedItem == 0)
+            if (currentSelectedItem == 0)
             {
+                if (GameManager.Instance.HasKeyToCave == false)
+                {
+                    buyKeyNotification.SetActive(true);
+                    return;
+                }
                 _player.MaxHealth++;
                 _player.Health = _player.MaxHealth;
                 UIManager.Instance.UpdateMaxHealth(_player.MaxHealth);
@@ -73,6 +82,11 @@ public class Shop : MonoBehaviour
 
             if(currentSelectedItem == 1)
             {
+                if (GameManager.Instance.HasKeyToCave == false)
+                {
+                    buyKeyNotification.SetActive(true);
+                    return;
+                }
                 _player.haveSwordArc = true;
             }
 
@@ -81,11 +95,13 @@ public class Shop : MonoBehaviour
                 GameManager.Instance.HasKeyToCave = true;
             }
             _player.diamonds -= currentItemCost;
+            UIManager.Instance.UpdateGemCount(_player.diamonds);
             shopPanel.SetActive(false);
         }
         else
         {
-            Debug.Log("You dont have enough gems!!");
+            //Debug.Log("You dont have enough gems!!");
+            noGemsNotification.SetActive(true);
             shopPanel.SetActive(false);
         }
     }
