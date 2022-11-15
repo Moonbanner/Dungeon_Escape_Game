@@ -1819,7 +1819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff448aa64a2c0e848808a5d8f80db7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamonds: 100
+  diamonds: 0
   _rigid: {fileID: 0}
   jumpForce: 7
   _speed: 5
