@@ -5,12 +5,18 @@ using UnityEngine;
 public class Skeleton : Enemy, IDamageable
 {
     public int Health { get; set; }
+    private AudioSource _audioSource;
+    [SerializeField]
+    private AudioClip _hitClip;
+    [SerializeField]
+    private AudioClip _deathClip;
 
     //use for initialization
     public override void Init()
     {
         base.Init();
-        Health = base.health; 
+        Health = base.health;
+        _audioSource = GetComponent<AudioSource>();
     }
     public override void Movement()
     {
@@ -22,14 +28,20 @@ public class Skeleton : Enemy, IDamageable
         if (Health < 1) return;
         //Debug.Log("Skeleton::Damage()");
         Health--;
-        anim.SetTrigger("Hit");
-        isHit = true;
-        anim.SetBool("InCombat", true);
         HealthBarUpdate(Health);
+        if (Health >=1)
+        {
+            anim.SetTrigger("Hit");
+            _audioSource.PlayOneShot(_hitClip);
+            isHit = true;
+            anim.SetBool("InCombat", true);
+        }
         if (Health < 1)
         {
             isDeath = true;
             anim.SetTrigger("Death");
+            _audioSource.PlayOneShot(_hitClip);
+            _audioSource.PlayOneShot(_deathClip);
             GetComponent<BoxCollider2D>().enabled = false;
             GameObject diamond = Instantiate(diamondPrefab, transform.position, Quaternion.identity) as GameObject;
             diamond.GetComponent<Diamond>().gems = base.gems;

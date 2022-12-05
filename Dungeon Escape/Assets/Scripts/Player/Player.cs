@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour, IDamageable
 {
     public int diamonds;
+    public bool shopping = false;
 
     public Rigidbody2D _rigid;
     [SerializeField]
@@ -21,6 +22,21 @@ public class Player : MonoBehaviour, IDamageable
     private bool isHit = false;
     public bool haveSwordArc = false;
 
+    [SerializeField]
+    private AudioClip _jump;
+    [SerializeField]
+    private AudioClip _swordSwingClip;
+    [SerializeField]
+    private AudioClip _swordFlameSwingClip;
+    [SerializeField]
+    private AudioClip _coinPickUpClip;
+    [SerializeField]
+    private AudioClip _hitClip;
+    [SerializeField]
+    private AudioClip _deathClip;
+
+    private AudioSource _audioSource;
+
     public int Health { get; set; }
     public int MaxHealth { get; set; }
 
@@ -28,12 +44,14 @@ public class Player : MonoBehaviour, IDamageable
     void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
         //assign handle to playerAnimation
         _playerAnim = GetComponent<PlayerAnimation>();
         _playerSprite = GetComponentInChildren<SpriteRenderer>();
         _swordArcSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
         MaxHealth = 2;
         Health = 2;
+        
     }
     //void Awake()
     //{
@@ -54,13 +72,22 @@ public class Player : MonoBehaviour, IDamageable
             {
                 Movement();
 
-                //left click to swing sword
-                if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
+                if (shopping == false)
                 {
-                    _playerAnim.Swing();
-                    if (haveSwordArc)
+                    //left click to swing sword
+                    if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
                     {
-                        _playerAnim.SwordArc();
+                        if (haveSwordArc == false)
+                        {
+                            _playerAnim.Swing();
+                            _audioSource.PlayOneShot(_swordSwingClip);
+                        }
+                        if (haveSwordArc)
+                        {
+                            _playerAnim.Swing();
+                            _playerAnim.SwordArc();
+                            _audioSource.PlayOneShot(_swordFlameSwingClip);
+                        }
                     }
                 }
             }      
@@ -92,6 +119,7 @@ public class Player : MonoBehaviour, IDamageable
             _rigid.velocity = new Vector2(_rigid.velocity.x, jumpForce);
             StartCoroutine(ResetJumpRoutine());
             _playerAnim.Jump(true);
+            _audioSource.PlayOneShot(_jump);
         }
 
         _rigid.velocity = new Vector2(move * _speed, _rigid.velocity.y);
@@ -149,6 +177,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         _playerAnim.Death();
         isDeath = true;
+        _audioSource.PlayOneShot(_deathClip);
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Menu");
     }
@@ -156,6 +185,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         _playerAnim.Hit();
         isHit = true;
+        _audioSource.PlayOneShot(_hitClip);
         yield return new WaitForSeconds(1.5f);
         isHit = false;
     }
@@ -190,6 +220,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void AddGems(int amount)
     {
+        _audioSource.PlayOneShot(_coinPickUpClip);
         diamonds += amount;
         UIManager.Instance.UpdateGemCount(diamonds);
     }

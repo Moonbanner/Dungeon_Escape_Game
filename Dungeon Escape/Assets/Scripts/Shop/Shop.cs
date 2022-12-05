@@ -11,9 +11,18 @@ public class Shop : MonoBehaviour
     public int currentItemCost = 5;
     private Player _player;
 
+    private AudioSource _audioSource;
+    [SerializeField]
+    private AudioClip _itemSelectClip;
+    [SerializeField]
+    private AudioClip _itemBoughtClip;
+    [SerializeField]
+    private AudioClip _healthGainedClip;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        _audioSource = GetComponent<AudioSource>();
+        if (other.tag == "Player")
         {
             _player = other.GetComponent<Player>();
 
@@ -23,6 +32,7 @@ public class Shop : MonoBehaviour
             }
 
             shopPanel.SetActive(true);
+            _player.shopping = true;
         }
     }
 
@@ -33,6 +43,7 @@ public class Shop : MonoBehaviour
             shopPanel.SetActive(false);
             noGemsNotification.SetActive(false);
             buyKeyNotification.SetActive(false);
+            _player.shopping = false;
         }
     }
 
@@ -47,16 +58,19 @@ public class Shop : MonoBehaviour
         switch(item)
         {
             case 0:
+                _audioSource.PlayOneShot(_itemSelectClip);
                 UIManager.Instance.UpdateShopSelection(132);
                 currentSelectedItem = 0;
                 currentItemCost = 15 ;
                 break;
             case 1:
+                _audioSource.PlayOneShot(_itemSelectClip);
                 UIManager.Instance.UpdateShopSelection(28);
                 currentSelectedItem = 1;
                 currentItemCost = 10 ;
                 break;
             case 2:
+                _audioSource.PlayOneShot(_itemSelectClip);
                 UIManager.Instance.UpdateShopSelection(-76);
                 currentSelectedItem = 2;
                 currentItemCost = 5;
@@ -66,7 +80,7 @@ public class Shop : MonoBehaviour
 
     public void BuyItem()
     {
-        if(_player.diamonds >= currentItemCost)
+        if (_player.diamonds >= currentItemCost)
         {
             if (currentSelectedItem == 0)
             {
@@ -75,8 +89,10 @@ public class Shop : MonoBehaviour
                     buyKeyNotification.SetActive(true);
                     return;
                 }
+                _audioSource.PlayOneShot(_itemBoughtClip);
                 _player.MaxHealth++;
                 _player.Health = _player.MaxHealth;
+                _audioSource.PlayOneShot(_healthGainedClip);
                 UIManager.Instance.UpdateMaxHealth(_player.MaxHealth);
             }
 
@@ -87,12 +103,14 @@ public class Shop : MonoBehaviour
                     buyKeyNotification.SetActive(true);
                     return;
                 }
+                _audioSource.PlayOneShot(_itemBoughtClip);
                 _player.haveSwordArc = true;
             }
 
             if(currentSelectedItem == 2)
             {
                 GameManager.Instance.HasKeyToCave = true;
+                _audioSource.PlayOneShot(_itemBoughtClip);
             }
             _player.diamonds -= currentItemCost;
             UIManager.Instance.UpdateGemCount(_player.diamonds);
