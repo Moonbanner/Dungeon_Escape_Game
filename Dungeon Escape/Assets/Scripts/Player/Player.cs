@@ -36,9 +36,9 @@ public class Player : MonoBehaviour, IDamageable
     private AudioClip _deathClip;
 
     private AudioSource _audioSource;
-
+    
     public int Health { get; set; }
-    public int MaxHealth { get; set; }
+    public int MaxHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -49,9 +49,8 @@ public class Player : MonoBehaviour, IDamageable
         _playerAnim = GetComponent<PlayerAnimation>();
         _playerSprite = GetComponentInChildren<SpriteRenderer>();
         _swordArcSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
-        MaxHealth = 2;
-        Health = 2;
-        
+        Health = MaxHealth;
+        UIManager.Instance.UpdateMaxHealth(Health);
     }
     //void Awake()
     //{

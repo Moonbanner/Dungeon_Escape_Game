@@ -2127,6 +2127,7 @@ MonoBehaviour:
   _coinPickUpClip: {fileID: 8300000, guid: ab7526c990d33493ca9335cb9991f315, type: 3}
   _hitClip: {fileID: 8300000, guid: a9ae926986ca740659123c36ddfc5fec, type: 3}
   _deathClip: {fileID: 8300000, guid: 199da85ceacd746f3a3b0cb319f38381, type: 3}
+  MaxHealth: 2
 --- !u!61 &220825255
 BoxCollider2D:
   m_ObjectHideFlags: 0
