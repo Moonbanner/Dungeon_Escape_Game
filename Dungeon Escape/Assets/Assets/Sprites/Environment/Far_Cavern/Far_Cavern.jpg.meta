@@ -195,7 +195,7 @@ TextureImporter:
       213: -8830549764752006295
     second: Far_Cavern_63
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -216,6 +216,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -224,9 +225,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -254,6 +255,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -293,6 +295,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1660,6 +1674,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Far_Cavern_0: 7798693932262605472
+      Far_Cavern_1: -6427635379560847210
+      Far_Cavern_10: 8211764509254443914
+      Far_Cavern_11: -4142154020424364173
+      Far_Cavern_12: 8343803173295835288
+      Far_Cavern_13: -2177437833825867693
+      Far_Cavern_14: -3374816772333790378
+      Far_Cavern_15: -5503848669812476123
+      Far_Cavern_16: -6505878101489649613
+      Far_Cavern_17: -6210621871638078501
+      Far_Cavern_18: 702426623642847742
+      Far_Cavern_19: 8598339062191418022
+      Far_Cavern_2: 1879502814526755472
+      Far_Cavern_20: -4197185977574311280
+      Far_Cavern_21: -6594966631653125371
+      Far_Cavern_22: -6628152367641167547
+      Far_Cavern_23: 8443245680136308983
+      Far_Cavern_24: -4607504203817676793
+      Far_Cavern_25: 1545395586310935083
+      Far_Cavern_26: 3879999085551079925
+      Far_Cavern_27: 4692833705535980491
+      Far_Cavern_28: 808055082083336990
+      Far_Cavern_29: -323721081897409660
+      Far_Cavern_3: 219833882013313471
+      Far_Cavern_30: 5673537205540550997
+      Far_Cavern_31: 761111170698342027
+      Far_Cavern_32: 2106435988174701781
+      Far_Cavern_33: 4042766603209145855
+      Far_Cavern_34: 2079941355974264947
+      Far_Cavern_35: 3195828598757070128
+      Far_Cavern_36: -627786301791668696
+      Far_Cavern_37: -2719770730127313951
+      Far_Cavern_38: -3878206829050025898
+      Far_Cavern_39: 3812849041911137030
+      Far_Cavern_4: 5829959408232144656
+      Far_Cavern_40: 7819087355729541266
+      Far_Cavern_41: -814478053085961175
+      Far_Cavern_42: -4903935752222327430
+      Far_Cavern_43: -1571455385947283713
+      Far_Cavern_44: 6194249397583982356
+      Far_Cavern_45: -8022586373160133755
+      Far_Cavern_46: -4799597611014446615
+      Far_Cavern_47: 2937652730960783436
+      Far_Cavern_48: 5422688387502093762
+      Far_Cavern_49: -3886608075890606692
+      Far_Cavern_5: 7322109111561562712
+      Far_Cavern_50: 2903975034863310803
+      Far_Cavern_51: -9013100735601867529
+      Far_Cavern_52: 7162704604183430879
+      Far_Cavern_53: 3705837304644826621
+      Far_Cavern_54: -8115656617527465116
+      Far_Cavern_55: -3298120957762452460
+      Far_Cavern_56: -8788991872992672522
+      Far_Cavern_57: 6307078644919958210
+      Far_Cavern_58: -1493257040875179008
+      Far_Cavern_59: 6388591076301975909
+      Far_Cavern_6: -839588452248286258
+      Far_Cavern_60: 8247820319041475698
+      Far_Cavern_61: -220511216107328496
+      Far_Cavern_62: -849572330230248161
+      Far_Cavern_63: -8830549764752006295
+      Far_Cavern_7: 6735870724283547837
+      Far_Cavern_8: 6203052892448827985
+      Far_Cavern_9: 8374054939895240049
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
