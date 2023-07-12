@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour, IDamageable
                 if (shopping == false)
                 {
                     //left click to swing sword
-                    if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
+                    if (CrossPlatformInputManager.GetButtonDown("A_Button") && IsGrounded() == true)
                     {
                         if (haveSwordArc == false)
                         {
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour, IDamageable
 
     void Movement()
     {
-        float move = Input.GetAxisRaw("Horizontal");
+        float move = CrossPlatformInputManager.GetAxis("Horizontal"); // Input.GetAxisRaw("Horizontal");
         _grounded = IsGrounded();
 
         if (move > 0)
@@ -113,7 +114,7 @@ public class Player : MonoBehaviour, IDamageable
             Flip(true);
         }
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && IsGrounded() == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || CrossPlatformInputManager.GetButtonDown("B_Button")) && IsGrounded() == true)
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, jumpForce);
             StartCoroutine(ResetJumpRoutine());
