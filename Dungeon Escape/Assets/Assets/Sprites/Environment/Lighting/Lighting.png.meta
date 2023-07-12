@@ -195,7 +195,7 @@ TextureImporter:
       213: -3530005646637420870
     second: Lighting_63
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -216,6 +216,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -224,9 +225,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -254,6 +255,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -303,6 +305,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1660,6 +1674,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Lighting_0: -4768491185540978301
+      Lighting_1: -5829346498430573815
+      Lighting_10: -7762695542940505434
+      Lighting_11: 4863143148946454936
+      Lighting_12: 8959186979255892134
+      Lighting_13: 1941949272343942543
+      Lighting_14: 4366167284695250159
+      Lighting_15: -1849724254613013631
+      Lighting_16: 559365502153282164
+      Lighting_17: -7629310713269505031
+      Lighting_18: -5860379624072537467
+      Lighting_19: 1026766763091522728
+      Lighting_2: 8035443207316782
+      Lighting_20: 3617941804709030164
+      Lighting_21: 8215262632374244138
+      Lighting_22: -6033335105121063637
+      Lighting_23: -5662512321489441763
+      Lighting_24: -6849932188392870464
+      Lighting_25: -7582140077998267385
+      Lighting_26: -3848677228769863416
+      Lighting_27: -8994799735059594602
+      Lighting_28: -1061270230015507141
+      Lighting_29: -9121732181916078800
+      Lighting_3: 2423334966335226251
+      Lighting_30: 1004705559162878930
+      Lighting_31: -6467869264200567867
+      Lighting_32: 6000261262277871257
+      Lighting_33: 1675704789029357677
+      Lighting_34: -4497795699865040096
+      Lighting_35: 1419973003882235514
+      Lighting_36: -6892697987374769343
+      Lighting_37: 6310202230269373900
+      Lighting_38: -4324485140042345853
+      Lighting_39: -7551482452214742710
+      Lighting_4: -3734063934776018980
+      Lighting_40: 5051183749973895236
+      Lighting_41: 5792695606105928695
+      Lighting_42: -6175954492023850149
+      Lighting_43: 7169885765490261386
+      Lighting_44: 4898124782610303925
+      Lighting_45: 7733598829379911168
+      Lighting_46: 5661794359961947210
+      Lighting_47: -8007723569335745158
+      Lighting_48: 823767938855463208
+      Lighting_49: 913180347338222198
+      Lighting_5: 1189635275023353813
+      Lighting_50: 8776210822580933980
+      Lighting_51: -1821973965990568027
+      Lighting_52: -3961318851824762456
+      Lighting_53: -7268508301235351345
+      Lighting_54: 9124946217034063646
+      Lighting_55: 2268656462447742216
+      Lighting_56: -7072365519118148513
+      Lighting_57: -7790529708904579559
+      Lighting_58: -2928928250760104622
+      Lighting_59: 8785354605821852945
+      Lighting_6: -2078410981395946228
+      Lighting_60: -6622628410476917557
+      Lighting_61: -162466268415194474
+      Lighting_62: -1490762068631440979
+      Lighting_63: -3530005646637420870
+      Lighting_7: -6702640102922712646
+      Lighting_8: -4951073783854633988
+      Lighting_9: 6241338318089224520
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
