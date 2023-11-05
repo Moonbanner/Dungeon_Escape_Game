@@ -771,7 +771,7 @@ TextureImporter:
       213: 180853830391468711
     second: Mountain_BG_255
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -792,6 +792,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -800,9 +801,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -830,6 +831,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -869,6 +871,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2236,6 +2250,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Mountain_BG_0: -5214244998875399764
+      Mountain_BG_1: 2455816072923005877
+      Mountain_BG_10: -3154024342885386766
+      Mountain_BG_11: 7720151560669554856
+      Mountain_BG_12: -4902439809666968153
+      Mountain_BG_13: -6642182948044265685
+      Mountain_BG_14: -4572497214151813394
+      Mountain_BG_15: -5782748438057242889
+      Mountain_BG_16: -7514880830071110973
+      Mountain_BG_17: -4018143961995686392
+      Mountain_BG_18: -7687914086116189874
+      Mountain_BG_19: 2621455760372667005
+      Mountain_BG_2: -2940278036389571967
+      Mountain_BG_20: 1565854405902406227
+      Mountain_BG_21: -8060541269605244471
+      Mountain_BG_22: -4871350120750459059
+      Mountain_BG_23: 7837089964339596812
+      Mountain_BG_24: -8176413520254893142
+      Mountain_BG_25: 7774961732574615288
+      Mountain_BG_26: 4497940750769342624
+      Mountain_BG_27: 2480244150892916240
+      Mountain_BG_28: 3939166065588483924
+      Mountain_BG_29: -8997361740049161047
+      Mountain_BG_3: -7202488377180695592
+      Mountain_BG_30: 304159034244315758
+      Mountain_BG_31: -6549099850952515471
+      Mountain_BG_32: -752183373837169637
+      Mountain_BG_33: -3716943145842615724
+      Mountain_BG_34: -8293205998944639977
+      Mountain_BG_35: 5148170429966215928
+      Mountain_BG_36: 6726796668831957897
+      Mountain_BG_37: 6073221300018066128
+      Mountain_BG_38: -3467785164748935145
+      Mountain_BG_39: -6730734243769533855
+      Mountain_BG_4: 3545114051027241602
+      Mountain_BG_40: -8959415373196735651
+      Mountain_BG_41: 5233741095759441278
+      Mountain_BG_42: -807697675798176849
+      Mountain_BG_43: 1045479459945968890
+      Mountain_BG_44: 6787667979512934114
+      Mountain_BG_45: 7434710522713362284
+      Mountain_BG_46: 6291464588749821841
+      Mountain_BG_47: 6658785877761648753
+      Mountain_BG_48: 5303791464333767490
+      Mountain_BG_49: -9016550435854766521
+      Mountain_BG_5: 4063313815381187051
+      Mountain_BG_50: -7251593325432370188
+      Mountain_BG_51: 9221499847118180356
+      Mountain_BG_52: -3030295493776624443
+      Mountain_BG_53: -3613971014790785775
+      Mountain_BG_54: -5386565427396510554
+      Mountain_BG_55: -7081866694681986005
+      Mountain_BG_56: -3526078522408057457
+      Mountain_BG_57: 2550222981592618628
+      Mountain_BG_58: 5687207525688491922
+      Mountain_BG_59: -1963245938698623017
+      Mountain_BG_6: -1116138873230338975
+      Mountain_BG_60: -3395460829165726337
+      Mountain_BG_61: 6955483250816208876
+      Mountain_BG_62: -3059293571027898527
+      Mountain_BG_63: 8415279970258274750
+      Mountain_BG_7: 1530449060680245226
+      Mountain_BG_8: 6491846852886962467
+      Mountain_BG_9: 4769570029042459323
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
